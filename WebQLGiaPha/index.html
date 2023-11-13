@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Web quản lý gia phả</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="asset/mycode.js"></script>
+    <link href="asset/mystyle.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--
+        Giao diện
+    -->
+    <!--
+     <div class="tuyetvoi">
+         <h1>Minh Hoa xinh gái</h1>
+         <h2>Xinh đẹp tuyệt trần</h2>
+         <img src ="anh\hoaxinh.jpg" alt="">
+     </div>
+    -->
+
+    <div class="web">
+
+        <div class="header">
+            <div class="grid">
+                <a href="" class="logo">
+                    <img src="anh/tree.png"alt="" />
+                </a>
+
+                <div class="header_navbar">
+                    <ul class="list">
+                        <li class="item">
+                            <a href="" class="item-link "> Family Tree</a>
+                        </li>
+                        <li class="item">Giới Thiệu</li>
+                        <li class="item">
+                            <a href="" class="item1-link">Tạo Cây</a>
+                        </li>
+                        <li class="item">Cây Mẫu</li>
+                        <li class="item">Đăng Nhập</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <form name="Data" action="CreatePerson.ashx" method="POST" id="frmUpload">
+                <div class="mb-3 row">
+                    <div class="col g-3">
+                        <label  for="ho" class="form-label">Họ</label>
+                        <input name="ho" type="text" class="form-control" id="ho">
+                    </div>
+                    <div class="col g-3">
+                        <label  for="ten" class="form-label">Tên</label>
+                        <input name="ten" type="text" class="form-control" id="ten">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label  for="ngaysinh" class="form-label">Ngày sinh</label>
+                    <input name="ngaysinh" class="form-control" id="ngaysinh" />
+                </div>
+                <div class="mb-3">
+                    <label for="exampleDataList" class="form-label">Giới tính</label>
+                    <select name="gioitinh" class="form-select" aria-label="Default select example">
+                        <option selected value="1">Nam</option>
+                        <option value="0">Nữ</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="noisinh" class="form-label">Nơi sinh</label>
+                    <input name="noisinh" type="text" class="form-control" id="noisinh">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Thêm</button>
+
+            </form>
+        </div>
+
+
+        <footer class="footer">
+        </footer>
+        <script>
+            $('#ngaysinh').datepicker(
+                {
+                    dateFormat: "dd-mm-yy",
+                    changeMonth: true,
+                    changeYear: true
+                });
+            $("#doSomething").click(function () {
+                $.post("test.ashx",
+                    { txtName: $("#data").val() }, function (result) { alert(result); });
+            });
+        </script>
+
+    </div>
+
+</body>
+
+</html>
